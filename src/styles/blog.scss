@@ -1,0 +1,13 @@
+* {
+	--tw-prose-quote-borders: rgb(124, 58, 237);
+	--tw-prose-code: rgb(107, 114, 128);
+}
+
+.prose {
+	blockquote {
+		@apply bg-gray-200 dark:bg-gray-800;
+	}
+	a {
+		@apply text-blue-500 no-underline hover:text-blue-600 hover:underline;
+	}
+}
