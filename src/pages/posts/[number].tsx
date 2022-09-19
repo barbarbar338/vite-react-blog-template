@@ -9,7 +9,7 @@ import useSWR from "swr";
 
 const PostPage: FC = () => {
 	const location = useLocation();
-	const number = location.pathname.split("/")[1];
+	const number = location.pathname.split("/")[2];
 
 	const { data: post, error } = useSWR(`/posts/${number}`, async () => {
 		const post = await getPostData(parseInt(number));

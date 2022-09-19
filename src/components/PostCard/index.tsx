@@ -14,6 +14,12 @@ export const PostCard: FC<IPost> = ({
 	title,
 	number,
 }) => {
+	const parts = bodyHTML.split(" ");
+	const description = [];
+	while (description.join(" ").length < 300) {
+		description.push(parts.shift());
+	}
+
 	return (
 		<div className="mb-7 rounded bg-white p-6 shadow-lg focus:outline-none lg:mr-7 lg:mb-0 lg:w-4/12">
 			<div className="flex items-center border-b border-gray-200 pb-6">
@@ -25,7 +31,7 @@ export const PostCard: FC<IPost> = ({
 				<div className="flex w-full items-start justify-between">
 					<div className="w-full pl-3">
 						<Link
-							to={`/${number}`}
+							to={`/posts/${number}`}
 							className="cursor-pointer text-xl font-medium leading-5 text-gray-800 hover:underline focus:outline-none"
 						>
 							{title}
@@ -37,7 +43,8 @@ export const PostCard: FC<IPost> = ({
 					</div>
 					<div>
 						<Link
-							to={`/${number}`}
+							to={`/posts/${number}`}
+							target="_blank"
 							className="cursor-pointer text-blue-500 hover:text-blue-600"
 						>
 							<ExternalLink />
@@ -49,8 +56,7 @@ export const PostCard: FC<IPost> = ({
 				<p
 					className="py-4 text-sm leading-5 text-gray-600 focus:outline-none"
 					dangerouslySetInnerHTML={{
-						__html:
-							bodyHTML.split(" ").slice(0, 25).join(" ") + "...",
+						__html: description.join(" ") + "...",
 					}}
 				/>
 				<div className="flex flex-wrap focus:outline-none">

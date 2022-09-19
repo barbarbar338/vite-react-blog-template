@@ -2,7 +2,7 @@
 
 -   Blog template made with Vite, React, Tailwind, and TypeScript.
 -   Blog server depends on GitHub Discussions, see how It works [here (TR)](https://338.rocks/blog/post/14/).
--   See [Live Demo here](https://blog-template.338.rocks)!
+-   See [Live Demo here](https://vite-react-blog-template.vercel.app/)!
 
 # 🤓 Setup
 
